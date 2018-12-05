@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+body {
+  font-family: 'Open Sans', 'Arial';
+  line-height: 1.2;
+  font-size: 24px;
+
+}
+
+form {
+
+}
+
+input {
+  width: 100%;
+  border: none;
+  background-color: #eee;
+  padding: 40px;
+  outline: none;
+}
+
+section.results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 32px 32px;
+  padding: 32px;
+}
+
+div.single-result div.image {
+  background-color: #eee;
+  height: 400px;
+  margin-bottom: 16px;
+}
+
+span.loading {
+  background-color: #eee;
+  height: 12px;
+  width: 50%;
+  display: inline-block;
+}
+
+div.single-result p span.loading {
+  width: 30%;
+}
