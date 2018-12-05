@@ -19,7 +19,12 @@ const searchUnsplash = function (term) {
       // format unsplash's results to fit our needs
       return data.results.map(result => {
         return {
-          imageSrc: result.urls.regular
+          imageSrc: result.urls.regular,
+          width: result.width,
+          height: result.height,
+          name: result.user.name,
+          title: (result.description || "Untitled"),
+          backgroundColor: (result.color || "#cccccc") + "33"
         }
       })
     })
@@ -35,7 +40,11 @@ const addResults = function (results) {
   results.forEach(results => {
     resultsTag.innerHTML = resultsTag.innerHTML + `
       <div class="single-result">
-        <img src="${results.imageSrc}">
+        <div class="image" style="background-color: ${results.backgroundColor};">
+          <img src="${results.imageSrc}">
+        </div>
+        <h2>${results.title}</h2>
+        <p>by ${results.name} -- ${results.width} x ${results.height}</p>
       </div>
     `
   })
